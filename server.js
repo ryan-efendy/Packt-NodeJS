@@ -1,7 +1,7 @@
 // set up ======================================================================
 require('dotenv').config()
 let appInsights = require("applicationinsights");
-appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY).start();
+appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING).start();
 let express = require('express');
 let app = express(); 						// create our app w/ express
 let mongoose = require('mongoose'); 				// mongoose for mongodb
