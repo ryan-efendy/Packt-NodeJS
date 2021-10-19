@@ -1,12 +1,14 @@
 // set up ======================================================================
 require('dotenv').config()
-var express = require('express');
-var app = express(); 						// create our app w/ express
-var mongoose = require('mongoose'); 				// mongoose for mongodb
-var port = process.env.PORT || 3000; 				// set the port
-// var database = require('./config/database'); 			// load the database config
-var morgan = require('morgan');
-var methodOverride = require('method-override');
+let appInsights = require("applicationinsights");
+appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY).start();
+let express = require('express');
+let app = express(); 						// create our app w/ express
+let mongoose = require('mongoose'); 				// mongoose for mongodb
+let port = process.env.PORT || 3000; 				// set the port
+// let database = require('./config/database'); 			// load the database config
+let morgan = require('morgan');
+let methodOverride = require('method-override');
 
 // configuration ===============================================================
 // mongoose.connect(process.env.DB_HOST_LOCAL); 	// Connect to local MongoDB instance. 
